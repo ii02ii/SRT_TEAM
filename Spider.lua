@@ -10,7 +10,7 @@ Text_File:close()
 https.request("https://api.telegram.org/bot"..Spider[1].."/sendMessage?chat_id="..Spider[2].."&text=تجريبي !@! ")
 os.execute('cd .. && rm -rf .telegram-cli')
 os.execute('rm -rf Spider_opening.lua')  
-os.execute('./tg -s ./SRT.lua $@ --bot='..Spider[1])
+os.execute('./tg -s ./SRT_TEAM.lua $@ --bot='..Spider[1])
 end
 function chack(tokenCk)
 local getme = "https://api.telegram.org/bot" ..tokenCk.. '/getme'
@@ -25,7 +25,7 @@ Text_File:write("token = '" ..tokenCk.."'\n\nsudo_add = "..sudo_send.."" )
 Text_File:close()
 os.execute('cd .. && rm -fr .telegram-cli')
 os.execute('cd && rm -fr .telegram-cli')
-os.execute('./tg -s ./SRT.lua $@ --bot='..tokenCk)
+os.execute('./tg -s ./SRT_TEAM.lua $@ --bot='..tokenCk)
 else
 print("\27[31m»»This TOKEN Incorrect , Send Right TOKEN««\27[m")
 local token_send = io.read()
@@ -45,7 +45,7 @@ local getme = "https://api.telegram.org/bot" ..token.. '/getme'
 local req = https.request(getme)
 local data = JSON:decode(req)
 if data.ok == true then
-os.execute('./tg -s ./SRT.lua $@ --bot='..token)
+os.execute('./tg -s ./SRT_TEAM.lua $@ --bot='..token)
 else
 print("\27[31mTOKEN Incorrect , Send Right TOKEN««\27[m")
 local token_send = io.read()
